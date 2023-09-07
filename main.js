@@ -29,16 +29,22 @@ function onSubmit(e) {
 
         //creat delete button element
         var deleteBtn = document.createElement('button');
-
         //add class to del button
         deleteBtn.className='btn'
-
         deleteBtn.appendChild(document.createTextNode("Delete"));
-
-
         //append button to li
         li.appendChild(deleteBtn)
+        //append li to list
+        userList.appendChild(li);
 
+
+        //creat Edit button element
+        var editbtn = document.createElement('button');
+        //add class to del button
+        editbtn.className='btn'
+        editbtn.appendChild(document.createTextNode("Edit"));
+        //append button to li
+        li.appendChild(editbtn)
         //append li to list
         userList.appendChild(li);
 
@@ -68,6 +74,17 @@ function onSubmit(e) {
            // console.log('key:', key);
             localStorage.removeItem(key);
             li.remove();
+          });
+
+
+          editbtn.addEventListener('click', () => {
+             
+            localStorage.removeItem(key);
+            li.remove();
+
+            // Fill the input boxes with the user's data
+            nameInput.value = data.name;
+            emailInput.value = data.email;
             
 
           });
