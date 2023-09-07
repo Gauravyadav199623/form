@@ -6,6 +6,9 @@ const userList = document.querySelector('#users');
 
 
 
+let user=[];
+
+
 myForm.addEventListener('submit', onSubmit)
 
 function onSubmit(e) {
@@ -19,18 +22,18 @@ function onSubmit(e) {
         setTimeout(() => msg.remove(), 5000)
     } else{
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`))
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
         userList.appendChild(li);
         
 
 
 
         // Store the data in localStorage or sessionStorage
-    //const data = { name: nameInput.value, email: emailInput.value };
-    localStorage.setItem('name', nameInput.value);
-    localStorage.setItem('email', emailInput.value);
-
+    const data = { name: nameInput.value, email: emailInput.value };
+    user.push(data)
+    localStorage.setItem('formData', JSON.stringify(user));
     //sessionStorage.setItem('formData', data);
+    
 
 
 
