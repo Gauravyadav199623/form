@@ -26,8 +26,10 @@ function onSubmit(e) {
 
 
         // Store the data in localStorage or sessionStorage
-    const data = { name: nameInput.value, email: emailInput.value };
-    localStorage.setItem('formData', JSON.stringify(data));
+    //const data = { name: nameInput.value, email: emailInput.value };
+    localStorage.setItem('name', nameInput.value);
+    localStorage.setItem('email', emailInput.value);
+
     //sessionStorage.setItem('formData', data);
 
 
