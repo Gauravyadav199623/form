@@ -6,7 +6,7 @@ const userList = document.querySelector('#users');
 
 
 
-let user=[];
+//let user=[];
 
 
 myForm.addEventListener('submit', onSubmit)
@@ -24,6 +24,25 @@ function onSubmit(e) {
         const li = document.createElement('li');
         li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`));
         userList.appendChild(li);
+
+
+
+        //creat delete button element
+        var deleteBtn = document.createElement('button');
+
+        //add class to del button
+        deleteBtn.className='btn'
+
+        deleteBtn.appendChild(document.createTextNode("Delete"));
+
+
+        //append button to li
+        li.appendChild(deleteBtn)
+
+        //append li to list
+        userList.appendChild(li);
+
+
         
 
 
@@ -41,6 +60,18 @@ function onSubmit(e) {
         // Clear fields
         emailInput.value="";
         nameInput.value="";
+
+
+        deleteBtn.addEventListener('click', () => {
+            
+            //console.log('deleteBtn clicked');
+           // console.log('key:', key);
+            localStorage.removeItem(key);
+            li.remove();
+            
+
+          });
         
-    }
+    }  
 }
+
