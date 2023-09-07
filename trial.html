@@ -1,0 +1,32 @@
+<form id="myForm">
+    <label>name</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label >Email</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label >Phone</label>
+    <input type="tel" id="phone" name="Phone" required>
+    <br>
+    <label >Time for call</label>
+    <input type="date" id="date" name="Time for call" placeholder="22/11/2020">
+    <input type="time" id="time" name="time" placeholder="11:00">
+    <br>
+    <button>GET A CALL</button>
+</form>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let username = document.getElementById("username").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let date = document.getElementById("date").value;
+  let time = document.getElementById("time").value;
+  console.log("Username: " + username);
+  console.log("Email: " + email);
+  console.log("Phone: " + phone);
+  console.log("Date: " + date);
+  console.log("Time: " + time);
+});
+</script>
